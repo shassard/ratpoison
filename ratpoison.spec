@@ -2,7 +2,7 @@
 
 Name:           ratpoison
 Version:        1.4.9
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Minimalistic window manager
 Group:          Applications/Productivity
 License:        GPLv2+
@@ -10,9 +10,19 @@ URL:            http://www.nongnu.org/ratpoison/
 Source0:        http://savannah.nongnu.org/download/ratpoison/%{name}-%{version}.tar.xz
 Source1:	%{name}.desktop
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel, libXi-devel, libXrandr-devel, texinfo, gcc
+BuildRequires: libXft-devel
+BuildRequires: libX11-devel
+BuildRequires: readline-devel
+BuildRequires: libXt-devel
+BuildRequires: libXinerama-devel
+BuildRequires: libXtst-devel
+BuildRequires: libXi-devel
+BuildRequires: libXrandr-devel
+BuildRequires: texinfo
+BuildRequires: gcc
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
+Requires: xterm
 
 %description
 Ratpoison is a simple window manager that relies solely on keyboard input as
@@ -64,6 +74,9 @@ fi
 %{_datadir}/emacs/site-lisp/ratpoison.el
 
 %changelog
+* Sun Dec 26 2021 Stephen Hassard <steve@hassard.net> - 1.4.9-2
+- Improve EL9 builds
+
 * Thu Oct 22 2021 Stephen Hassard <steve@hassard.net> - 1.4.9-1
 - Update to 1.4.9
 
