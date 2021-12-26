@@ -10,7 +10,7 @@ URL:            http://www.nongnu.org/ratpoison/
 Source0:        http://savannah.nongnu.org/download/ratpoison/%{name}-%{version}.tar.xz
 Source1:	%{name}.desktop
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel, libXi-devel, libXrandr-devel, texinfo
+BuildRequires: libXft-devel, libX11-devel, readline-devel, libXt-devel, libXinerama-devel, libXtst-devel, libXi-devel, libXrandr-devel, texinfo, gcc
 Requires(post): /sbin/install-info
 Requires(preun): /sbin/install-info
 
